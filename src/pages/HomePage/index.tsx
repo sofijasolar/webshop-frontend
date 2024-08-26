@@ -3,7 +3,7 @@ import AllProducts from "../../components/Products/AllProducts";
 const HomePage: React.FC = () => {
     return (
         <div>
-        <h2 className="font-serif md:text-[50px] sm:text-[40px] xs:text-[30px] text-[24px]">Products</h2>
+        <h2 className="font-sans md:text-[40px] sm:text-[30px] xs:text-[30px] text-[30px]">Products</h2>
         <AllProducts />
         </div>
     );
