@@ -5,18 +5,18 @@ const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-blue-500 fixed top-0 left-0 right-0 z-10 shadow-md">
+    <nav className="bg-white fixed top-0 left-0 right-0 z-10 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-white text-2xl font-bold">
+            <Link to="/" className="text-2xl font-sans text-gray-800 font-normal">
               Webshop
             </Link>
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 text-white bg-blue-600 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 text-gray-800  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
             >
               <svg
                 className="h-6 w-6"
@@ -36,11 +36,14 @@ const NavigationBar = () => {
             </button>
           </div>
           <div className="hidden md:flex md:space-x-4">
-            <Link to="/" className="text-white hover:bg-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link to="/" className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
               Home
+              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
             </Link>
-            <Link to="/products" className="text-white hover:bg-blue-600 px-3 py-2 rounded-md text-sm font-medium">
+            <Link to="/products" className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
               Products
+              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+
             </Link>
           </div>
         </div>
