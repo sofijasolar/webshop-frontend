@@ -5,10 +5,11 @@ import BackButton from "../../components/reusables/BackButton";
 const ProductDetailPage = () => {
     return (
         <div className="">
-            {/* back button */}
-            <div className="p-3">
+            {/* back button , correct to use header or just use div? */}
+            <header className="p-3">
                 <BackButton />
-            </div>
+            </header>
+
             <ProductDetail />
         </div>
     );
