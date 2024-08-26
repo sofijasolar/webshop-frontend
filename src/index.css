@@ -70,3 +70,55 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* navigation  */
+
+/* ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    float: right;
+}
+  
+li {
+    float: left;
+}
+li a {
+    color: #457287;
+    display: inline-block;
+    padding: 8px;
+    text-decoration: none;
+    position: relative;
+    font-size: 18px;
+
+}
+li a:hover {
+    color: black;
+} */
+
+/* navbar effects */
+
+/* a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    
+    background-color: #0b60df;
+    background-color: #876445;
+    background-color: black;
+    
+} 
+a::after {
+    opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+a:hover::after, a:focus::after {
+    transform: scale(0.8);
+} */
