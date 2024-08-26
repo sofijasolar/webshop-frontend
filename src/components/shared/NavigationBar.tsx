@@ -36,13 +36,13 @@ const NavigationBar = () => {
             </button>
           </div>
           <div className="hidden md:flex md:space-x-4">
-            <Link to="/" className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
+            <Link to="/" className="text-gray-800 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
               Home
-              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-400"></span>
             </Link>
-            <Link to="/products" className="text-gray-800 hover:bg-gray-100 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
+            <Link to="/products" className="text-gray-800  hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
               Products
-              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-600"></span>
+              <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-400"></span>
 
             </Link>
           </div>
@@ -52,13 +52,13 @@ const NavigationBar = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <Link
             to="/"
-            className="text-white hover:bg-blue-600 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
           >
             Home
           </Link>
           <Link
             to="/products"
-            className="text-white hover:bg-blue-600 block px-3 py-2 rounded-md text-base font-medium"
+            className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
           >
             Products
           </Link>
