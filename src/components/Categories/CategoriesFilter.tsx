@@ -5,7 +5,7 @@ import { useCategories } from '../../hooks/useCategories';
 
 const CategoriesFilter: React.FC = () => {
   const { categories, loading, error } = useCategories();
-  const { setSelectedCategory } = useStoreContext();
+  const { selectedCategory, setSelectedCategory } = useStoreContext();
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
@@ -16,6 +16,14 @@ const CategoriesFilter: React.FC = () => {
 
   return (
     <div className="p-4 w-full md:w-auto flex justify-end min-w-[200px]">
+      {selectedCategory !== null && (
+          <button
+            onClick={() => setSelectedCategory(null)}
+            className="text-sm text-gray-700 font-semibold mr-1 bg-gray-200 rounded-full"> 
+              <span className="text-sm text-gray-700 font-semibold mr-1">{selectedCategory}</span>
+
+            X</button>
+        )}
       <FilterByCategoriesButton categories={categories} onClick={handleCategorySelect} />
     </div>
   );
