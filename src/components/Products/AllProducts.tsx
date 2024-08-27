@@ -18,8 +18,9 @@ const AllProducts = () => {
  
 
   //TODO: add a loading spinner
-  // because right now when i show the spinner, elements move around.. none of current solutions are user friendly 
-  return (
+/*   because right now when i show the spinner, elements move around.. none of current solutions are user friendly 
+-> need to get control over the elements
+ */  return (
     <section className="mt-2">
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {currentProducts.map(product => (

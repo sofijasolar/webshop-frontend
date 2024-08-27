@@ -1,3 +1,23 @@
+# webshop-frontend – Telenor interview
+
+This is a simple webshop frontend for a Telenor interview. It is built with React and TypeScript, and uses Vite as the build tool.
+
+Improvements:
+- improve user friendliness
+  - add loading indicators
+  - add user feedback on actions such as add, remove, etc...
+  - add error handling and feedback
+  - improve design
+
+- implement pagination
+  - add pagination to the product list
+
+- implement better support of several functions that might be in 'conflict' with each other 
+  - eg search and filter at the same time
+
+  
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -49,5 +69,4 @@ export default tseslint.config({
 })
 ```
 # webshop-frontend
-# webshop-frontend
-# webshop-frontend
+
