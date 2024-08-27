@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router'
 import ProductDetailPage from './pages/ProductDetailPage'
 import NavigationBar from './components/shared/NavigationBar'
 import { StoreProvider } from './contexts/StoreContext'
+import CartPage from './pages/CartPage'
 
 // add provider
 // add navigation
@@ -18,6 +19,8 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />} /> 
                 <Route path="/product/:id" element={<ProductDetailPage />} />
+                <Route path="/cart" element={<CartPage />} />
+
               </Routes>
           </main>
           

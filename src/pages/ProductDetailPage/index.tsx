@@ -1,5 +1,5 @@
 import ProductDetail from "../../components/Products/ProductDetail";
-import BackButton from "../../components/reusables/BackButton";
+import BackButton from "../../components/common/BackButton";
 
 
 const ProductDetailPage = () => {

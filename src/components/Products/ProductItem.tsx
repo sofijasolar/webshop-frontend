@@ -1,4 +1,5 @@
 import { IProduct } from "../../interfaces/IProduct";
+import AddToCartButton from "../common/AddToCartButton";
 
 const ProductItem: React.FC<{ product: IProduct }> = ({ product }) => {
 

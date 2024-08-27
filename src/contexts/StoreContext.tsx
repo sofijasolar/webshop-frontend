@@ -1,6 +1,5 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { IProduct } from '../interfaces/IProduct';
-// import { ICategory } from '../interfaces/ICategory';
 
 interface StoreContextType {
   products: IProduct[];
@@ -8,11 +7,15 @@ interface StoreContextType {
   currentProducts: IProduct[];
   categories: string[];
   selectedCategory: string | null;
+
+  productsInCart: IProduct[];
+
   setProducts: (products: IProduct[]) => void;
   setCurrentProducts: (products: IProduct[]) => void;
   setProductsLoaded: (loaded: boolean) => void;
   setCategories: (categories: string[]) => void;
   setSelectedCategory: (category: string | null) => void;
+  setProductsInCart: (products: IProduct[]) => void;
 }
 
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
@@ -27,6 +30,32 @@ export const StoreProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
 
+  const [productsInCart, setProductsInCart] = useState<IProduct[]>([]);
+
+
+  useEffect(() => {
+    getFromLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0) {
+      saveCartToLocalStorage(productsInCart);
+    }
+  }, [productsInCart]);
+
+  const saveCartToLocalStorage = (products: IProduct[]) => {
+    localStorage.setItem('cart', JSON.stringify(products));
+  }
+
+  const getFromLocalStorage = () => {
+    const cart = localStorage.getItem('cart');
+    if (cart) {
+      setProductsInCart(JSON.parse(cart));
+    }
+  }
+
+
+
   return (
     <StoreContext.Provider
       value={{
@@ -35,11 +64,13 @@ export const StoreProvider: React.FC<{ children: ReactNode }> = ({ children }) =
         categories,
         selectedCategory,
         productsLoaded, 
+        productsInCart,
         setProductsLoaded,
         setProducts,
         setCurrentProducts,
         setCategories,
         setSelectedCategory,
+        setProductsInCart,
       }}
     >
       {children}

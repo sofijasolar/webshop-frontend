@@ -40,11 +40,19 @@ const NavigationBar = () => {
               Home
               <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-400"></span>
             </Link>
-            <Link to="/products" className="text-gray-800  hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
+            {/* <Link to="/products" className="text-gray-800  hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium group transition duration-30">
               Products
               <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-400"></span>
 
-            </Link>
+            </Link> */}
+            <Link
+            to="/cart"
+className="text-gray-800  hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium group transition duration-30"
+          >
+            Cart
+            <span className="text-gray-800 bg-gray-800 block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-sky-400"></span>
+
+          </Link>
           </div>
         </div>
       </div>
@@ -56,11 +64,18 @@ const NavigationBar = () => {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/products"
             className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
           >
             Products
+          </Link> */}
+          <Link
+            to="/cart"
+            className="text-gray-800 hover:text-gray-900 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
+
+          >
+            Cart
           </Link>
         </div>
       </div>
