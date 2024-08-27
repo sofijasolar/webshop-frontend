@@ -4,7 +4,7 @@ const ProductItem: React.FC<{ product: IProduct }> = ({ product }) => {
 
     return (
         <article className="p-2 h-full bg-white rounded shadow hover:shadow-lg transition-shado flex flex-col flex-grow">
-            <img src={product.images[0]} alt={product.title} 
+            <img src={product.image} alt={product.title} 
                 className="w-full h-48 object-contain mb-4 rounded" 
             />
             <div className="product-info flex flex-col flex-grow p-2">

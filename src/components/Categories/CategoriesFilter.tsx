@@ -2,13 +2,12 @@ import React from 'react';
 import FilterByCategoriesButton from './FilterByCategoriesButton';
 import { useStoreContext } from '../../contexts/StoreContext';
 import { useCategories } from '../../hooks/useCategories';
-import { ICategory } from '../../interfaces/ICategory';
 
 const CategoriesFilter: React.FC = () => {
   const { categories, loading, error } = useCategories();
   const { setSelectedCategory } = useStoreContext();
 
-  const handleCategorySelect = (category: ICategory) => {
+  const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
   };
 

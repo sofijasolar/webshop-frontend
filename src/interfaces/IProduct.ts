@@ -3,9 +3,7 @@ export interface IProduct {
     title: string
     price: number
     description: string
-    images: string[]
-    creationAt: string
-    updatedAt: string
+    image: string
     category: string
 }
 // {
