@@ -15,7 +15,7 @@ const ProductDetail: React.FC = () => {
       {/* Image Section */}
       <div className="md:w-1/2 p-4">
         <img
-          src={product.images[0]}
+          src={product.image}
           alt={product.title}
           className="w-full h-auto object-cover rounded-lg"
         />

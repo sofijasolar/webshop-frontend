@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../services/WebshopService";
-import { ICategory } from "../interfaces/ICategory";
 
 export const useCategories = () => {
-    const [categories, setCategories] = useState<ICategory[]>([]);
+    const [categories, setCategories] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 

@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { ICategory } from '../../interfaces/ICategory';
 
 interface FilterByCategoriesButtonProps {
-  categories: ICategory[];
-  onClick: (category: ICategory) => void;
+  categories: string[];
+  onClick: (category: string) => void;
 }
 
 const FilterByCategoriesButton: React.FC<FilterByCategoriesButtonProps> = ({ categories, onClick }) => {
@@ -31,12 +30,15 @@ const FilterByCategoriesButton: React.FC<FilterByCategoriesButtonProps> = ({ cat
       </button>
 
       {/* Dropdown menu */}
+      {/* and operator. Checks if variabel exist/ is true. If it is, then the jsx after && i shown.
+      Else it is ingored. Be carefull using this if you might get another value than null or false. Like 0 when fetching
+      a list. Another solution could be isOpen  ? <jsx> : null*/}
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
             {categories.map((category) => (
               <button
-                key={category.id}
+                key={category}
                 onClick={() => {
                   onClick(category);
                   //TODO: add the selected category to the state, show selected category component next to filter and filter products
@@ -44,7 +46,7 @@ const FilterByCategoriesButton: React.FC<FilterByCategoriesButtonProps> = ({ cat
                 }}
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left"
               >
-                {category.name}
+                {category}
               </button>
             ))}
           </div>

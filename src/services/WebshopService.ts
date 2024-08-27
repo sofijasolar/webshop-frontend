@@ -5,9 +5,8 @@
 // TODO: implement proper error handling
 import { createAxiosClient, handleGetError, performGetRequest } from './axiosClient';
 import { IProduct } from '../interfaces/IProduct';
-import { ICategory } from '../interfaces/ICategory';
 
-const webshopClient = createAxiosClient('https://api.escuelajs.co/api/v1');
+const webshopClient = createAxiosClient('https://fakestoreapi.com');
 
 // Get requests to the Webshop Client
 
@@ -34,10 +33,10 @@ export const getProductById = async (id: number): Promise<IProduct> => {
     }
 };
 
-export const getAllCategories = async (): Promise<ICategory[]> => {
+export const getAllCategories = async (): Promise<string[]> => {
     try {
-        return await performGetRequest<ICategory[]>(webshopClient, {
-        url: '/categories',
+        return await performGetRequest<string[]>(webshopClient, {
+        url: '/products/categories',
         });
     } catch (error) {
         console.error('Failed to fetch categories:', error);
@@ -45,13 +44,13 @@ export const getAllCategories = async (): Promise<ICategory[]> => {
     }
 };
 
-export const getProductsByCategory = async (category: ICategory): Promise<IProduct[]> => {
+export const getProductsByCategory = async (category: string): Promise<IProduct[]> => {
     try {
         return await performGetRequest<IProduct[]>(webshopClient, {
-        url: `/products/?categoryId=${category.id}`,
+        url: `/products/category/${category}`,
         });
     } catch (error) {
-        console.error(`Failed to fetch products in category ${category.name}:`, error);
+        console.error(`Failed to fetch products in category ${category}:`, error);
         throw new Error('Unable to load products.');
     }
 }

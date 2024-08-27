@@ -4,7 +4,7 @@ import ProductItem from './ProductItem';
 import { useStoreContext } from '../../contexts/StoreContext';
 
 const AllProducts = () => {
-  const { products } = useStoreContext();
+  const { currentProducts } = useStoreContext();
   const {  loading, error } = useProducts();
 
 
@@ -22,7 +22,7 @@ const AllProducts = () => {
   return (
     <section className="mt-2">
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {products.map(product => (
+            {currentProducts.map(product => (
             // <ProductItem key={product.id} product={product} />
             <Link key={product.id} to={`/product/${product.id}`} className="w-full flex">
               <ProductItem product={product} />
