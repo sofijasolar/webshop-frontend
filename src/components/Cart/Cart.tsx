@@ -13,11 +13,25 @@ const Cart: React.FC = () => {
         setTotalPrice(total);
     }
 
-    const removeProduct = (id: number) => {
-        const newProducts = productsInCart.filter((product) => product.id !== id);
-        setProductsInCart(newProducts);
-    }
+    // const removeProduct = (id: number) => {
+    //     const newProducts = productsInCart.filter((product) => product.id !== id);
+    //     setProductsInCart(newProducts);
+    // }
 
+    // since there can be several products in cart with same id, now we only remove first instance 
+    const removeProduct = (id: number) => {
+        const indexToRemove = productsInCart.findIndex(product => product.id === id);
+      
+        if (indexToRemove !== -1) {
+          const newProducts = [
+            ...productsInCart.slice(0, indexToRemove),
+            ...productsInCart.slice(indexToRemove + 1),
+          ];
+          setProductsInCart(newProducts);
+        }
+      };
+
+      
     useEffect(() => {
         getTotalPrice();
         }, [productsInCart])
@@ -38,6 +52,7 @@ const Cart: React.FC = () => {
 
         </div>
     )
+    
 }
 
 export default Cart;
